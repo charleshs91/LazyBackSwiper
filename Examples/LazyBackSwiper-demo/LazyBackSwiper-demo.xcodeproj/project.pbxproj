@@ -1,0 +1,367 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7CE6CB0424D586FE00B9D12C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE6CB0324D586FE00B9D12C /* AppDelegate.swift */; };
+		7CE6CB0624D586FE00B9D12C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE6CB0524D586FE00B9D12C /* SceneDelegate.swift */; };
+		7CE6CB0B24D586FE00B9D12C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CE6CB0924D586FE00B9D12C /* Main.storyboard */; };
+		7CE6CB0D24D5870000B9D12C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CE6CB0C24D5870000B9D12C /* Assets.xcassets */; };
+		7CE6CB1024D5870000B9D12C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CE6CB0E24D5870000B9D12C /* LaunchScreen.storyboard */; };
+		7CE6CB1824D5884400B9D12C /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE6CB1724D5884300B9D12C /* FirstViewController.swift */; };
+		7CE6CB1A24D588B000B9D12C /* NextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE6CB1924D588B000B9D12C /* NextViewController.swift */; };
+		7CE6CB1D24D5890700B9D12C /* LazyBackSwiper in Frameworks */ = {isa = PBXBuildFile; productRef = 7CE6CB1C24D5890700B9D12C /* LazyBackSwiper */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7CE6CB0024D586FE00B9D12C /* LazyBackSwiper-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LazyBackSwiper-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CE6CB0324D586FE00B9D12C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7CE6CB0524D586FE00B9D12C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		7CE6CB0A24D586FE00B9D12C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7CE6CB0C24D5870000B9D12C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7CE6CB0F24D5870000B9D12C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7CE6CB1124D5870000B9D12C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7CE6CB1724D5884300B9D12C /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		7CE6CB1924D588B000B9D12C /* NextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7CE6CAFD24D586FE00B9D12C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CE6CB1D24D5890700B9D12C /* LazyBackSwiper in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7CE6CAF724D586FE00B9D12C = {
+			isa = PBXGroup;
+			children = (
+				7CE6CB0224D586FE00B9D12C /* LazyBackSwiper-demo */,
+				7CE6CB0124D586FE00B9D12C /* Products */,
+				7CE6CB1B24D5890700B9D12C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		7CE6CB0124D586FE00B9D12C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7CE6CB0024D586FE00B9D12C /* LazyBackSwiper-demo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7CE6CB0224D586FE00B9D12C /* LazyBackSwiper-demo */ = {
+			isa = PBXGroup;
+			children = (
+				7CE6CB0324D586FE00B9D12C /* AppDelegate.swift */,
+				7CE6CB0524D586FE00B9D12C /* SceneDelegate.swift */,
+				7CE6CB1724D5884300B9D12C /* FirstViewController.swift */,
+				7CE6CB1924D588B000B9D12C /* NextViewController.swift */,
+				7CE6CB0924D586FE00B9D12C /* Main.storyboard */,
+				7CE6CB0C24D5870000B9D12C /* Assets.xcassets */,
+				7CE6CB0E24D5870000B9D12C /* LaunchScreen.storyboard */,
+				7CE6CB1124D5870000B9D12C /* Info.plist */,
+			);
+			path = "LazyBackSwiper-demo";
+			sourceTree = "<group>";
+		};
+		7CE6CB1B24D5890700B9D12C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7CE6CAFF24D586FE00B9D12C /* LazyBackSwiper-demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7CE6CB1424D5870000B9D12C /* Build configuration list for PBXNativeTarget "LazyBackSwiper-demo" */;
+			buildPhases = (
+				7CE6CAFC24D586FE00B9D12C /* Sources */,
+				7CE6CAFD24D586FE00B9D12C /* Frameworks */,
+				7CE6CAFE24D586FE00B9D12C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "LazyBackSwiper-demo";
+			packageProductDependencies = (
+				7CE6CB1C24D5890700B9D12C /* LazyBackSwiper */,
+			);
+			productName = "LazyBackSwiper-demo";
+			productReference = 7CE6CB0024D586FE00B9D12C /* LazyBackSwiper-demo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7CE6CAF824D586FE00B9D12C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1160;
+				LastUpgradeCheck = 1160;
+				ORGANIZATIONNAME = "Charles Hsieh";
+				TargetAttributes = {
+					7CE6CAFF24D586FE00B9D12C = {
+						CreatedOnToolsVersion = 11.6;
+					};
+				};
+			};
+			buildConfigurationList = 7CE6CAFB24D586FE00B9D12C /* Build configuration list for PBXProject "LazyBackSwiper-demo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7CE6CAF724D586FE00B9D12C;
+			productRefGroup = 7CE6CB0124D586FE00B9D12C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7CE6CAFF24D586FE00B9D12C /* LazyBackSwiper-demo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7CE6CAFE24D586FE00B9D12C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CE6CB1024D5870000B9D12C /* LaunchScreen.storyboard in Resources */,
+				7CE6CB0D24D5870000B9D12C /* Assets.xcassets in Resources */,
+				7CE6CB0B24D586FE00B9D12C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7CE6CAFC24D586FE00B9D12C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CE6CB0424D586FE00B9D12C /* AppDelegate.swift in Sources */,
+				7CE6CB1A24D588B000B9D12C /* NextViewController.swift in Sources */,
+				7CE6CB0624D586FE00B9D12C /* SceneDelegate.swift in Sources */,
+				7CE6CB1824D5884400B9D12C /* FirstViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7CE6CB0924D586FE00B9D12C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7CE6CB0A24D586FE00B9D12C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7CE6CB0E24D5870000B9D12C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7CE6CB0F24D5870000B9D12C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7CE6CB1224D5870000B9D12C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7CE6CB1324D5870000B9D12C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7CE6CB1524D5870000B9D12C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HW9KY3R5BK;
+				INFOPLIST_FILE = "LazyBackSwiper-demo/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.charleshs.LazyBackSwiper-demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7CE6CB1624D5870000B9D12C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HW9KY3R5BK;
+				INFOPLIST_FILE = "LazyBackSwiper-demo/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.charleshs.LazyBackSwiper-demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7CE6CAFB24D586FE00B9D12C /* Build configuration list for PBXProject "LazyBackSwiper-demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7CE6CB1224D5870000B9D12C /* Debug */,
+				7CE6CB1324D5870000B9D12C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7CE6CB1424D5870000B9D12C /* Build configuration list for PBXNativeTarget "LazyBackSwiper-demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7CE6CB1524D5870000B9D12C /* Debug */,
+				7CE6CB1624D5870000B9D12C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7CE6CB1C24D5890700B9D12C /* LazyBackSwiper */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LazyBackSwiper;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 7CE6CAF824D586FE00B9D12C /* Project object */;
+}
