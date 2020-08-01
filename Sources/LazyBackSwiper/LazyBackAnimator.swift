@@ -6,7 +6,7 @@ public protocol LazyBackAnimatorDelegate: AnyObject {
     func parallaxRatio(_ animator: LazyBackAnimator) -> CGFloat
 }
 
-extension LazyBackAnimatorDelegate {
+public extension LazyBackAnimatorDelegate {
     func transitionDuration(_ animator: LazyBackAnimator) -> TimeInterval { return LazyBackAnimator.transitionDurationDefault }
     func dimmingAmount(_ animator: LazyBackAnimator) -> CGFloat { return LazyBackAnimator.dimmingAmountDefault }
     func parallaxRatio(_ animator: LazyBackAnimator) -> CGFloat { return LazyBackAnimator.parallaxRatioDefault }
