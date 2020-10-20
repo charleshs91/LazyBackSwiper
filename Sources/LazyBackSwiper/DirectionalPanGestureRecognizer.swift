@@ -1,21 +1,24 @@
 import UIKit
 
 public final class DirectionalPanGestureRecognizer: UIPanGestureRecognizer {
-    public enum PanDirection {
-        case right
-        case down
-        case left
-        case up
+    public enum Direction {
+        case right, down, left, up
     }
 
     public private(set) var isDragging: Bool = false
 
-    private let direction: PanDirection
+    private let direction: Direction
 
-    /**
-     - parameter direction: The direction allowed to trigger the gesture
-     */
-    public init(target: Any?, action: Selector?, direction: PanDirection) {
+    /// Initializes an directional gesture-recognizer object with a target and an action selector.
+    ///
+    /// - parameters:
+    ///     - target: An object that is the recipient of action messages sent by the receiver when it recognizes a gesture.
+    ///               Nil is not a valid value.
+    ///     - action: A selector that identifies the method implemented by the target to handle the gesture recognized by the receiver.
+    ///               Nil is not a valid value.
+    ///     - direction: The direction allowed to trigger the gesture.
+    ///
+    public init(target: Any?, action: Selector?, direction: Direction) {
         self.direction = direction
         super.init(target: target, action: action)
     }
@@ -47,17 +50,17 @@ public final class DirectionalPanGestureRecognizer: UIPanGestureRecognizer {
     }
 }
 
-internal extension DirectionalPanGestureRecognizer {
+extension DirectionalPanGestureRecognizer {
     /// Encapsulate `PanDirection` and value of velocity
-    struct Speed: Comparable {
+    private struct Speed: Comparable {
         static func < (lhs: Speed, rhs: Speed) -> Bool {
             return lhs.value < rhs.value
         }
 
-        let direction: PanDirection
+        let direction: Direction
         let value: CGFloat
 
-        init(_ direction: PanDirection, value: CGFloat) {
+        init(_ direction: Direction, value: CGFloat) {
             self.direction = direction
             self.value = value
         }

@@ -1,13 +1,8 @@
-// 
-// LazyBackSwiper-demo
-// Copyright © 2020 Charles Hsieh. All rights reserved.
-//
-
 import UIKit
 import LazyBackSwiper
 
 final class NextViewController: UIViewController {
-    var lazySwiper: LazyBackSwiper?
+    private var lazySwiper: LazyBackSwiper?
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -1,58 +1,62 @@
-// 
-// LazySwipeBack
-// Copyright © 2020 Charles Hsieh. All rights reserved.
-//
-
 import UIKit
 
 public final class LazyBackSwiper: NSObject {
     public weak var animatorDelegate: LazyBackAnimatorDelegate? {
-        didSet { animator.delegate = animatorDelegate }
+        didSet {
+            animator.delegate = animatorDelegate
+        }
     }
 
     private let navigationController: UINavigationController
+
     private let animator: LazyBackAnimator
 
     private var interactionController: UIPercentDrivenInteractiveTransition?
-    private var panRecognizer: UIPanGestureRecognizer?
-    private var duringAnimation: Bool = false
+
+    private var panRecognizer: DirectionalPanGestureRecognizer!
+
+    private var isAnimating: Bool = false
 
     public init(navigationController: UINavigationController) {
         self.navigationController = navigationController
-        animator = LazyBackAnimator()
+        self.animator = LazyBackAnimator()
+
         super.init()
 
-        let panRecognizer = DirectionalPanGestureRecognizer(target: self, action: #selector(pan(_:)), direction: .right)
+        panRecognizer = DirectionalPanGestureRecognizer(target: self, action: #selector(pan(_:)), direction: .right)
         panRecognizer.maximumNumberOfTouches = 1
         panRecognizer.delegate = self
         navigationController.view.addGestureRecognizer(panRecognizer)
-        self.panRecognizer = panRecognizer
     }
 
-    @objc private func pan(_ recognizer: UIPanGestureRecognizer) {
+    @objc
+    private func pan(_ recognizer: UIPanGestureRecognizer) {
+        var transitionProgress: CGFloat {
+            let translation = recognizer.translation(in: navigationController.view)
+            return max(translation.x / navigationController.view.bounds.width, 0)
+        }
+
         switch recognizer.state {
         case .began:
-            if !duringAnimation && navigationController.viewControllers.count > 1 {
-                interactionController = UIPercentDrivenInteractiveTransition()
-                interactionController?.completionCurve = .easeOut
-                navigationController.popViewController(animated: true)
-            }
+            guard !isAnimating, navigationController.viewControllers.count > 1 else { return }
+            interactionController = UIPercentDrivenInteractiveTransition()
+            interactionController?.completionCurve = .easeOut
+            navigationController.popViewController(animated: true)
+
         case .changed:
-            let translation = recognizer.translation(in: navigationController.view)
-            let percent: CGFloat = max(translation.x / CGFloat(navigationController.view.bounds.width), 0)
-            interactionController?.update(percent)
+            interactionController?.update(transitionProgress)
+
         case .ended, .cancelled:
             let velocity = recognizer.velocity(in: navigationController.view)
-            let translation = recognizer.translation(in: navigationController.view)
-            let width = navigationController.view.frame.width
 
-            if translation.x > width / 2 || velocity.x > 1000 {
+            if transitionProgress > 0.5 || velocity.x > 1000 {
                 interactionController?.finish()
             } else {
                 interactionController?.cancel()
-                duringAnimation = false
+                isAnimating = false
             }
             interactionController = nil
+
         default:
             break
         }
@@ -60,26 +64,42 @@ public final class LazyBackSwiper: NSObject {
 }
 
 extension LazyBackSwiper: UINavigationControllerDelegate {
-    public func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    public func navigationController(
+        _ navigationController: UINavigationController,
+        animationControllerFor operation: UINavigationController.Operation,
+        from fromVC: UIViewController,
+        to toVC: UIViewController
+    ) -> UIViewControllerAnimatedTransitioning? {
         if operation == .pop {
             return animator
         }
         return nil
     }
 
-    public func navigationController(_ navigationController: UINavigationController, interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+    public func navigationController(
+        _ navigationController: UINavigationController,
+        interactionControllerFor animationController: UIViewControllerAnimatedTransitioning
+    ) -> UIViewControllerInteractiveTransitioning? {
         return interactionController
     }
 
-    public func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+    public func navigationController(
+        _ navigationController: UINavigationController,
+        willShow viewController: UIViewController,
+        animated: Bool
+    ) {
         if animated {
-            duringAnimation = true
+            isAnimating = true
         }
     }
 
-    public func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
-        duringAnimation = false
-        panRecognizer?.isEnabled = navigationController.viewControllers.count > 1
+    public func navigationController(
+        _ navigationController: UINavigationController,
+        didShow viewController: UIViewController,
+        animated: Bool
+    ) {
+        isAnimating = false
+        panRecognizer.isEnabled = navigationController.viewControllers.count > 1
     }
 }
 

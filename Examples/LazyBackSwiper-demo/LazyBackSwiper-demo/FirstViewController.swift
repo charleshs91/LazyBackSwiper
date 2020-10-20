@@ -1,8 +1,3 @@
-// 
-// LazyBackSwiper-demo
-// Copyright © 2020 Charles Hsieh. All rights reserved.
-//
-
 import UIKit
 
 final class FirstViewController: UIViewController {
