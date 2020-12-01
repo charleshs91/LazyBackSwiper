@@ -1,6 +1,16 @@
 import UIKit
 
 public final class LazyBackSwiper: NSObject {
+    public struct PopThreshold {
+        public let transitionProgress: CGFloat
+        public let panVelocity: CGFloat
+
+        public init(transitionProgress: CGFloat = 0.4, panVelocity: CGFloat = 1000) {
+            self.transitionProgress = transitionProgress
+            self.panVelocity = panVelocity
+        }
+    }
+
     public weak var animatorDelegate: LazyBackAnimatorDelegate? {
         didSet {
             animator.delegate = animatorDelegate
@@ -8,6 +18,8 @@ public final class LazyBackSwiper: NSObject {
     }
 
     private let navigationController: UINavigationController
+
+    private let threshold: PopThreshold
 
     private let animator: LazyBackAnimator
 
@@ -17,9 +29,10 @@ public final class LazyBackSwiper: NSObject {
 
     private var isAnimating: Bool = false
 
-    public init(navigationController: UINavigationController) {
+    public init(navigationController: UINavigationController, threshold: PopThreshold = PopThreshold()) {
         self.navigationController = navigationController
-        self.animator = LazyBackAnimator()
+        self.threshold = threshold
+        animator = LazyBackAnimator()
 
         super.init()
 
@@ -39,6 +52,7 @@ public final class LazyBackSwiper: NSObject {
         switch recognizer.state {
         case .began:
             guard !isAnimating, navigationController.viewControllers.count > 1 else { return }
+
             interactionController = UIPercentDrivenInteractiveTransition()
             interactionController?.completionCurve = .easeOut
             navigationController.popViewController(animated: true)
@@ -49,7 +63,7 @@ public final class LazyBackSwiper: NSObject {
         case .ended, .cancelled:
             let velocity = recognizer.velocity(in: navigationController.view)
 
-            if transitionProgress > 0.5 || velocity.x > 1000 {
+            if transitionProgress > threshold.transitionProgress || velocity.x > threshold.panVelocity {
                 interactionController?.finish()
             } else {
                 interactionController?.cancel()

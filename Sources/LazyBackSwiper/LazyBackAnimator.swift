@@ -5,23 +5,25 @@ fileprivate let kDimmingAmount: CGFloat = 0.5
 fileprivate let kParallaxRatio: CGFloat = 0.3
 
 public protocol LazyBackAnimatorDelegate: AnyObject {
+    /// Asks the delegate for the duration of the animated transition. Defaults to 0.3
     func transitionDuration(_ animator: LazyBackAnimator) -> TimeInterval
+
+    /// Asks the delegate for the dimming amount for the view being popped back to. Defaults to 0.5
     func dimmingAmount(_ animator: LazyBackAnimator) -> CGFloat
+
+    /// Asks the delegate for the ratio of the parallax effect during transition. Defaults to 0.3
     func parallaxRatio(_ animator: LazyBackAnimator) -> CGFloat
 }
 
 public extension LazyBackAnimatorDelegate {
-    /// Default is 0.3
     func transitionDuration(_ animator: LazyBackAnimator) -> TimeInterval {
         return kTransitionDuration
     }
 
-    /// Default is 0.5
     func dimmingAmount(_ animator: LazyBackAnimator) -> CGFloat {
         return kDimmingAmount
     }
 
-    /// Default is 0.3
     func parallaxRatio(_ animator: LazyBackAnimator) -> CGFloat {
         return kParallaxRatio
     }
@@ -37,12 +39,11 @@ public final class LazyBackAnimator: NSObject, UIViewControllerAnimatedTransitio
     }
 
     public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
-        guard
-            let toViewController = transitionContext.viewController(forKey: .to),
-            let fromViewController = transitionContext.viewController(forKey: .from),
-            let toView = toViewController.view,
-            let fromView = fromViewController.view
-            else { return }
+        guard let toViewController = transitionContext.viewController(forKey: .to),
+              let fromViewController = transitionContext.viewController(forKey: .from),
+              let toView = toViewController.view,
+              let fromView = fromViewController.view
+        else { return }
 
         let containerView = transitionContext.containerView
         containerView.addSubview(fromView)
@@ -68,15 +69,20 @@ public final class LazyBackAnimator: NSObject, UIViewControllerAnimatedTransitio
         toView.addSubview(dimmingView)
 
         // Animate transitioning
-        UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {
-            toView.transform = .identity
-            fromView.transform = CGAffineTransform(translationX: toView.frame.width, y: 0)
-            dimmingView.alpha = 0
-        }) { _ in
-            dimmingView.removeFromSuperview()
-            fromView.clipsToBounds = previousClipsToBounds
-            transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
-        }
+
+        UIView.animate(
+            withDuration: transitionDuration(using: transitionContext),
+            animations: {
+                toView.transform = .identity
+                fromView.transform = CGAffineTransform(translationX: toView.frame.width, y: 0)
+                dimmingView.alpha = 0
+            },
+            completion: { _ in
+                dimmingView.removeFromSuperview()
+                fromView.clipsToBounds = previousClipsToBounds
+                transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+            }
+        )
 
         self.toViewController = toViewController
     }
