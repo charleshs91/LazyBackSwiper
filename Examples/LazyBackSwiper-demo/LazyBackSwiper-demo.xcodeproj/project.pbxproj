@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7CC20F3C2577317900C7E801 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC20F3B2577317900C7E801 /* Extensions.swift */; };
 		7CE6CB0424D586FE00B9D12C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE6CB0324D586FE00B9D12C /* AppDelegate.swift */; };
 		7CE6CB0624D586FE00B9D12C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE6CB0524D586FE00B9D12C /* SceneDelegate.swift */; };
 		7CE6CB0B24D586FE00B9D12C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CE6CB0924D586FE00B9D12C /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7CC20F3B2577317900C7E801 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		7CE6CB0024D586FE00B9D12C /* LazyBackSwiper-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LazyBackSwiper-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CE6CB0324D586FE00B9D12C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CE6CB0524D586FE00B9D12C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				7CE6CB0524D586FE00B9D12C /* SceneDelegate.swift */,
 				7CE6CB1724D5884300B9D12C /* FirstViewController.swift */,
 				7CE6CB1924D588B000B9D12C /* NextViewController.swift */,
+				7CC20F3B2577317900C7E801 /* Extensions.swift */,
 				7CE6CB0924D586FE00B9D12C /* Main.storyboard */,
 				7CE6CB0C24D5870000B9D12C /* Assets.xcassets */,
 				7CE6CB0E24D5870000B9D12C /* LaunchScreen.storyboard */,
@@ -154,6 +157,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CC20F3C2577317900C7E801 /* Extensions.swift in Sources */,
 				7CE6CB0424D586FE00B9D12C /* AppDelegate.swift in Sources */,
 				7CE6CB1A24D588B000B9D12C /* NextViewController.swift in Sources */,
 				7CE6CB0624D586FE00B9D12C /* SceneDelegate.swift in Sources */,
