@@ -1,11 +1,15 @@
+#if os(iOS) || os(tvOS)
 import UIKit
 
 public final class LazyBackSwiper: NSObject {
     public struct PopThreshold {
+        public static let `default` = PopThreshold(transitionProgress: 0.4, panVelocity: 1000)
+
         public let transitionProgress: CGFloat
+
         public let panVelocity: CGFloat
 
-        public init(transitionProgress: CGFloat = 0.4, panVelocity: CGFloat = 1000) {
+        public init(transitionProgress: CGFloat, panVelocity: CGFloat) {
             self.transitionProgress = transitionProgress
             self.panVelocity = panVelocity
         }
@@ -29,7 +33,7 @@ public final class LazyBackSwiper: NSObject {
 
     private var isAnimating: Bool = false
 
-    public init(navigationController: UINavigationController, threshold: PopThreshold = PopThreshold()) {
+    public init(navigationController: UINavigationController, threshold: PopThreshold = .default) {
         self.navigationController = navigationController
         self.threshold = threshold
         animator = LazyBackAnimator()
@@ -122,3 +126,5 @@ extension LazyBackSwiper: UIGestureRecognizerDelegate {
         return navigationController.viewControllers.count > 1
     }
 }
+
+#endif

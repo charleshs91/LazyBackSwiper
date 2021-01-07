@@ -1,8 +1,9 @@
+#if os(iOS) || os(tvOS)
 import UIKit
 
-fileprivate let kTransitionDuration: TimeInterval = 0.3
-fileprivate let kDimmingAmount: CGFloat = 0.5
-fileprivate let kParallaxRatio: CGFloat = 0.3
+private let kTransitionDuration: TimeInterval = 0.3
+private let kDimmingAmount: CGFloat = 0.5
+private let kParallaxRatio: CGFloat = 0.3
 
 public protocol LazyBackAnimatorDelegate: AnyObject {
     /// Asks the delegate for the duration of the animated transition. Defaults to 0.3
@@ -93,3 +94,5 @@ public final class LazyBackAnimator: NSObject, UIViewControllerAnimatedTransitio
         }
     }
 }
+
+#endif
